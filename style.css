@@ -51,9 +51,10 @@ button {
 	border-radius: 10px;
 	border: none;
 	min-width: 50%;
+    
 }
 
-#cart-button {
+#cart_button {
 	background: none;
 	border: none;
 	border-radius: 50%;
@@ -64,15 +65,18 @@ button {
 	justify-content: center;
 	align-items: center;
 	transition: all .5s;
+    height: 35px;
+    width: 35px;
 }
-
 #cart {
 	position: relative;
+    
 	
 }
 
-#cart-button {
+#cart_button {
 	background-color: red;
+   
 
 }
 

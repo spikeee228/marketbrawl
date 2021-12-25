@@ -32,4 +32,24 @@ let cartProducts = document.getElementById('cart-products');
 
   function openCart(){
 	cartProducts.classList.toggle('hide')
-  }
+  };
+  function addProductToCart(id) {
+     let product = productsArray.find(function(p){
+    return p.id == id;
+  });
+  cart.push(products);
+  drawCart();
+ }
+ function drawCart() {
+   if(cart.length === 0) return cartProducts.innerHTML = `
+   Cart is empty
+   `
+   cartPruducts.innerHTML = null;
+   let sum = 0;
+   cart.forEach(function(p){
+      cartProducts.innerHTML += `
+         <p>
+         <img src="${p.photo_url}">
+      `
+   })
+ }
