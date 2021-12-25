@@ -20,8 +20,8 @@ xhr.onload = function() {
 		<p class='product-price'><b>Price: <b>${p.price}$</p>
 		<p class='product-description'><b>Description: </b>${p.description}</p>
 		<a href='index.html?id=${p.author_id}'>Seller profile</a>
-		<button>Buy</button>
-		</button>
+		<button onclick="addProductToCart(${p.id}">Buy</button>
+	
 		`;
 		productsGrid.append(pElem);
 		});
@@ -37,7 +37,7 @@ let cartProducts = document.getElementById('cart-products');
      let product = productsArray.find(function(p){
     return p.id == id;
   });
-  cart.push(products);
+  cart.push(product);
   drawCart();
  }
  function drawCart() {
@@ -49,7 +49,10 @@ let cartProducts = document.getElementById('cart-products');
    cart.forEach(function(p){
       cartProducts.innerHTML += `
          <p>
-         <img src="${p.photo_url}">
-      `
-   })
+         <img src="${p.photo_url}">  ${p.name} | ${p.price}$
+         </p>
+         <br>
+      `;
+      sum += p.price;
+   });
  }
